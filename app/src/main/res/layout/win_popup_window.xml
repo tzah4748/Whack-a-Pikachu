@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/pokeYellow"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/win_view_upper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:fontFamily="@font/pokemon_solid"
+        android:text="@string/win"
+        android:textColor="@color/pokeBlue"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/sad_pikachu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/win_view_upper"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true" />
+
+    <TextView
+        android:id="@+id/new_highscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/sad_pikachu"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/pokemon_solid"
+        android:visibility="gone"
+        android:textColor="@color/pokeBlue"
+        android:textSize="26sp"/>
+
+    <TextView
+        android:id="@+id/win_view_lower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/new_highscore"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/pokemon_solid"
+        android:text="@string/win_sad"
+        android:textColor="@color/pokeBlue"
+        android:textSize="26sp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/win_view_lower"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/highscores_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/pokemon_solid"
+            android:text="@string/highscores_title"
+            android:textColor="@color/pokeBlue"
+            android:visibility="gone"
+            android:textSize="26sp"/>
+
+        <Button
+            android:id="@+id/play_again_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/highscores_btn"
+            android:fontFamily="@font/pokemon_solid"
+            android:text="@string/play_again"
+            android:textColor="@color/pokeBlue"
+            android:textSize="26sp" />
+
+        <Button
+            android:id="@+id/back_to_menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/play_again_button"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/pokemon_solid"
+            android:text="@string/back_to_menu"
+            android:textColor="@color/pokeBlue"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</RelativeLayout>

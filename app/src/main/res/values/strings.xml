@@ -1,0 +1,30 @@
+<resources>
+    <!-- MainActivity -->
+    <string name="app_name">Whack a Pikachu</string>
+    <string name="game_title">Whack a Pikachu</string>
+    <string name="player_name">Player Name : </string>
+    <string name="name_hint">Type your name</string>
+    <string name="start_button"> START!</string>
+    <string name="highscores_button">Highscores</string>
+    <string name="pikachu_description">Cute Little Pikachu</string>
+    <string name="player1">Player 1</string>
+    <string name="hard_mode">Hard Mode</string>
+    <string name="beware_of_haunter">Beware of Haunter!</string>
+    <!-- GameActivity -->
+    <string name="health">Health</string>
+    <string name="heart_description">PokeHealth</string>
+    <string name="time">Time</string>
+    <string name="score">Score</string>
+    <string name="win">You Win</string>
+    <string name="lose">You Lose</string>
+    <string name="win_sad">But now pikachu is sad…</string>
+    <string name="lose_happy">Pikachu is too fast for you!</string>
+    <string name="restart_button">Restart</string>
+    <string name="time_left">30</string>
+    <string name="play_again">Play Again</string>
+    <string name="back_to_menu">Back To Menu</string>
+    <!-- HighscoresActivity -->
+    <string name="highscores_title">Top 10 High Scores</string>
+    <string name="reset_highscore_btn">Reset High Scores</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

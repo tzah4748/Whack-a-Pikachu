@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HighscoresActivity">
+
+    <TextView
+        android:id="@+id/highscores_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/pokemon_hollow"
+        android:text="@string/highscores_title"
+        android:textAlignment="center"
+        android:textColor="@color/pokeBlue"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/highscores_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="@id/highscores_title"
+        app:layout_constraintRight_toRightOf="@id/highscores_title"
+        app:layout_constraintTop_toBottomOf="@id/highscores_title"
+        app:layout_constraintBottom_toTopOf="@id/reset_btn"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/highscores_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="10dp">-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/imageButton2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@color/transparent"-->
+<!--                    android:src="@drawable/ic_location_on"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/score"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.5"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/score"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/score" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/player_1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Player 1"-->
+<!--                    android:textSize="30sp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/score"-->
+<!--                    app:layout_constraintHorizontal_bias="0.5"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/score"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="30"-->
+<!--                    android:textSize="30sp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/player_1"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/imageButton2"-->
+<!--                    app:layout_constraintHorizontal_bias="0.5"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/player_1"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/player_1" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+        </LinearLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/reset_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="@string/reset_highscore_btn"
+        app:layout_constraintLeft_toLeftOf="@id/highscores_scrollview"
+        app:layout_constraintRight_toRightOf="@id/highscores_scrollview"
+        app:layout_constraintTop_toBottomOf="@id/highscores_scrollview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/game_activity_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- Top Panel -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10sp"
+        android:paddingEnd="10sp">
+        <!-- Health -->
+        <RelativeLayout
+            android:id="@+id/health_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/health_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/pokemon_solid"
+                android:gravity="top"
+                android:text="@string/health"
+                android:textColor="@color/pokeBlue"
+                android:textSize="26sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/health_text">
+
+                <ImageView
+                    android:id="@+id/hp_1"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:contentDescription="@string/heart_description"
+                    android:cropToPadding="true"
+                    android:src="@drawable/health_ok" />
+
+                <ImageView
+                    android:id="@+id/hp_2"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_toEndOf="@id/hp_1"
+                    android:contentDescription="@string/heart_description"
+                    android:cropToPadding="true"
+                    android:src="@drawable/health_ok" />
+
+                <ImageView
+                    android:id="@+id/hp_3"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_toEndOf="@id/hp_2"
+                    android:contentDescription="@string/heart_description"
+                    android:cropToPadding="true"
+                    android:src="@drawable/health_ok" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <!-- Timer -->
+        <LinearLayout
+            android:id="@+id/timer_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/health_layout"
+            android:orientation="vertical"
+            android:paddingStart="20sp"
+            android:paddingEnd="20sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pokemon_solid"
+                android:text="@string/time"
+                android:textColor="@color/pokeBlue"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/game_timer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/pokemon_solid"
+                android:text="@string/time_left"
+                android:textAlignment="center"
+                android:textColor="@color/pokeYellow"
+                android:textSize="30sp" />
+        </LinearLayout>
+        <!-- Score -->
+        <RelativeLayout
+            android:id="@+id/score_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/timer_layout">
+
+            <TextView
+                android:id="@+id/score_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pokemon_solid"
+                android:gravity="center"
+                android:text="@string/score"
+                android:textColor="@color/pokeBlue"
+                android:textSize="26sp" />
+
+            <ProgressBar
+                android:id="@+id/score_progress"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/score_text"
+                android:max="30"
+                android:minHeight="50sp"
+                android:progress="0"
+                android:progressBackgroundTint="@color/pokeBlue"
+                android:progressTint="@color/pokeYellow"
+                android:scaleY="6" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/whack_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/game_background"
+        android:gravity="center">
+<!--        <GridLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:columnCount="3"-->
+<!--            android:rowCount="3">-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content">-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/test1"-->
+<!--                    android:layout_width="200dp"-->
+<!--                    android:layout_height="200dp"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/whack_pikachu"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintRight_toRightOf="parent">-->
+<!--                </ImageView>-->
+<!--                <TextView-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:textSize="40dp"-->
+<!--                    android:text="+5"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"/>-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        </GridLayout>-->
+
+    </RelativeLayout>
+</LinearLayout>
