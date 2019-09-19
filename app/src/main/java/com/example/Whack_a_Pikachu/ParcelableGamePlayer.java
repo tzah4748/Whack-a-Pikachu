@@ -22,23 +22,21 @@ public class ParcelableGamePlayer implements Parcelable {
     private int id;
     private String name;
     private int score;
-    private double latitude;
-    private double longitude;
+    private LatLng location;
 
-    public ParcelableGamePlayer(int id, String name, int score, double latitude, double longitude) {
+    public ParcelableGamePlayer(int id, String name, int score, LatLng location) {
         this.id = id;
         this.name = name;
         this.score = score;
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.location = location;
+
     }
 
     protected ParcelableGamePlayer(Parcel in) {
         this.id = in.readInt();
         this.name = in.readString();
         this.score = in.readInt();
-        this.latitude = in.readDouble();
-        this.longitude = in.readDouble();
+        this.location = in.readParcelable(LatLng.class.getClassLoader());
     }
 
     @Override
@@ -51,8 +49,7 @@ public class ParcelableGamePlayer implements Parcelable {
         parcel.writeInt(this.id);
         parcel.writeString(this.name);
         parcel.writeInt(this.score);
-        parcel.writeDouble(this.latitude);
-        parcel.writeDouble(this.longitude);
+        parcel.writeParcelable(this.location, i);
     }
 
     public int getId() { return id; }
@@ -61,5 +58,5 @@ public class ParcelableGamePlayer implements Parcelable {
 
     public int getScore() { return score; }
 
-    public LatLng getLocation() { return new LatLng(latitude, longitude); }
+    public LatLng getLocation() { return location; }
 }

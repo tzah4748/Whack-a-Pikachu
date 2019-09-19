@@ -57,8 +57,6 @@ public class GamePlayer extends ConstraintLayout implements Serializable {
 
     public ImageButton getLocationBtn() { return location_btn; }
 
-    public LatLng getLocation() { return location; }
-
     public String getName() { return name_view.getText().toString(); }
 
     private void applyConstraints() {

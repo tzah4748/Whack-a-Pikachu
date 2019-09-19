@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -83,15 +84,27 @@ public class HighscoresActivity extends AppCompatActivity {
             gp.getLocationBtn().setOnClickListener(locationBtnOnClickListener);
             highscorePlayers.add(gp);
             highscore_list.addView(gp);
-            parcelableGamePlayers.add(new ParcelableGamePlayer(gp.getLocationBtn().getId(), tmp.getName(), tmp.getScore(), tmp.getLocation().latitude, tmp.getLocation().longitude));
+            parcelableGamePlayers.add(new ParcelableGamePlayer(gp.getLocationBtn().getId(), tmp.getName(), tmp.getScore(), tmp.getLocation()));
+
         }
     }
 
     private void openMapActivity(ImageButton caller_btn) {
-        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
-        intent.putExtra("callerBtnId", caller_btn.getId());
-        intent.putParcelableArrayListExtra("highscorePlayers", parcelableGamePlayers);
-        startActivity(intent);
-        CustomIntent.customType(this, "bottom-to-up");
+        // Search for the caller_btn object
+        for(ParcelableGamePlayer tmp : parcelableGamePlayers) {
+            if(caller_btn.getId() == tmp.getId()) {
+                // When found, check that location isn't null
+                if(tmp.getLocation() != null) {
+                    Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                    intent.putExtra("callerBtnId", caller_btn.getId());
+                    intent.putParcelableArrayListExtra("highscorePlayers", parcelableGamePlayers);
+                    startActivity(intent);
+                    CustomIntent.customType(this, "bottom-to-up");
+                } else {
+                    // If null, don't open the MapsActivity.
+                    Toast.makeText(this, "Location unavailable.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
     }
 }

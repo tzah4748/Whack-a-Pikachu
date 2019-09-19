@@ -35,13 +35,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
         // Add Marker of all the players in the highscore list
         for(ParcelableGamePlayer tmp : highscorePlayers) {
-            mMap.addMarker(new MarkerOptions().position(tmp.getLocation()).title(tmp.getName() + " - Score: " + tmp.getScore()));
-            // Add Marker for the calling GamePlayer.
-            if(tmp.getId() == callerBtnId) {
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(tmp.getLocation(), 15.0f));
+            if (tmp.getLocation() != null) {
+                mMap.addMarker(new MarkerOptions().position(tmp.getLocation()).title(tmp.getName() + " - Score: " + tmp.getScore()));
+                // Add Marker for the calling GamePlayer.
+                if(tmp.getId() == callerBtnId) {
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(tmp.getLocation(), 15.0f));
+                }
             }
         }
     }
